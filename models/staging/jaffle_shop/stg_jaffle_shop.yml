@@ -1,8 +1,5 @@
 version: 2
-
 models:
-  
-
 - name: stg_customers
   description: This model cleans up customer data
   columns:
@@ -21,6 +18,7 @@ models:
         - unique
         - not_null
     - name: status
+      description: "{{doc{'order_status'}}}"
       tests:
         - accepted_values:
             values: ['shipped','completed','placed','return_pending','returned','placed']
